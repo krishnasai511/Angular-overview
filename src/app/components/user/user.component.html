@@ -1,0 +1,54 @@
+<h1>{{name}}</h1>
+  <ul>
+    <li>
+   {{age}}
+   {{address.street}}
+   {{address.Door}}
+</li>
+
+</ul>
+<h1>{{"hobbies"}}</h1>
+
+<button (click)='Onclick()'>Check out my hobbies</button>
+
+
+
+
+<form (submit)="AddHobby(hobby.value)">
+<div>
+  <label for="Hobbies Add"></label>
+  <input type="text" #hobby>
+</div>
+
+</form>
+
+
+<li *ngFor="let item of hobbies let i=index">
+    {{i+1}}:{{item}}
+    <button (click)="deleteHobby(item)">X</button>
+    </li> 
+
+  <h1>Edit User</h1>
+
+  <form>
+    <div>
+<label for="name"></label>
+<input type="text" [(ngModel)]="name" name="name">
+</div>
+<div>
+        <label for="age"></label>
+        <input type="text" [(ngModel)]="age" name="age">
+</div>
+<div>
+    <label for="Street"></label>
+    <input type="text" [(ngModel)]="address.street" name="street">
+ </div>
+
+
+  </form>
+
+  <h1>Posts</h1>
+<div *ngFor="let post of posts" >
+ <h3> {{post.title}}</h3>
+<p> {{post.body}}</p>
+</div>
